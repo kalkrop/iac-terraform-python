@@ -1,0 +1,14 @@
+services:
+  api:
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./src/:/api/src/
+  db:
+    image: postgres:16.3
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
